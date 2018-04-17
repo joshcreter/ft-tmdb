@@ -31,24 +31,11 @@ class AccessImdbTVSeries:
 
         ###
 
-        col_genre = 1
-
-        ###
-
         workbook = WorkbookTV(series_name)
-        # workbook.generate_workbook(series_name)
+
         worksheet_title = workbook.get_title_sheet().get_worksheet()
-        columns_title = workbook.get_title_sheet().get_columns()
-
         worksheet_genre = workbook.get_genre_sheet().get_worksheet()
-        columns_genre = workbook.get_genre_sheet().get_columns()
-
         worksheet_ratings = workbook.get_rating_sheet().get_worksheet()
-        columns_ratings = workbook.get_rating_sheet().get_columns()
-
-        current_worksheet_title_row = 1
-        current_worksheet_genre_row = 1
-        current_worksheet_ratings_row = 1
 
         for season in series_info['seasons']:
             season_number = season['season_number']
@@ -56,32 +43,41 @@ class AccessImdbTVSeries:
                 episode = tmdb.TV_Episodes(series_id=series_id, season_number=season_number, episode_number=episode_number)
                 episode_info = episode.info()
                 imdb_id = episode.external_ids()['imdb_id']
+                title_code = AccessImdbTVSeries.title_code_for_episode(series_id, season_number, episode_number)
+
                 print("{0:02d}x{1:02d}: {2}".format(season_number, episode_number, episode_info['name']))
 
-                title_code = AccessImdbTVSeries.title_code_for_episode(series_id, season_number, episode_number)
-                worksheet_title.write(current_worksheet_title_row, columns_title['title_code'], title_code)
-                worksheet_title.write(current_worksheet_title_row, columns_title['title'], episode_info['name'])
-                worksheet_title.write(current_worksheet_title_row, columns_title['type'], 'Episodes')
-                worksheet_title.write(current_worksheet_title_row, columns_title['season_number'], season_number)
-                worksheet_title.write(current_worksheet_title_row, columns_title['episode_number'], episode_number)
-                worksheet_title.write(current_worksheet_title_row, columns_title['tmdb_id'], episode_info['id'])
-                worksheet_title.write(current_worksheet_title_row, columns_title['imdb_id'], imdb_id)
-                worksheet_title.write(current_worksheet_title_row, columns_title['air_date'], episode_info['air_date'])
-                worksheet_title.write(current_worksheet_title_row, columns_title['production_code'], episode_info['production_code'])
-                worksheet_title.write(current_worksheet_title_row, columns_title['synopsis'], episode_info['overview'])
+                title_dataset = {
+                    'title_code': title_code,
+                    'title': episode_info['name'],
+                    'type': 'Episodes',
+                    'season_number': season_number,
+                    'episode_number': episode_number,
+                    'tmdb_id':  episode_info['id'],
+                    'imdb_id': imdb_id,
+                    'air_date': episode_info['air_date'],
+                    'production_code': episode_info['production_code'],
+                    'synopsis': episode_info['overview']
+                }
 
-                current_worksheet_title_row += 1
+                worksheet_title.write_data_row(title_dataset)
+
+                ratings_dataset = {
+                    'title_code': title_code,
+                    'authority': 'MPAA',
+                    'rating': rating_US
+                }
+
+                worksheet_ratings.write_data_row(ratings_dataset)
 
                 for genre in genres:
-                    worksheet_genre.write(current_worksheet_genre_row, 0, title_code)
-                    worksheet_genre.write(current_worksheet_genre_row, col_genre, genre['name'])
-                    current_worksheet_genre_row += 1
+                    genre_dataset = {
+                        'title_code': title_code,
+                        'genre': genre['name']
+                    }
+                    worksheet_genre.write_data_row(genre_dataset)
 
-                worksheet_ratings.write(current_worksheet_ratings_row, columns_ratings['title_code'], title_code)
-                worksheet_ratings.write(current_worksheet_ratings_row, columns_ratings['authority'], 'MPAA')
-                worksheet_ratings.write(current_worksheet_ratings_row, columns_ratings['rating'], rating_US)
 
-                current_worksheet_ratings_row += 1
 
         #         # cast = episode['cast']
         #

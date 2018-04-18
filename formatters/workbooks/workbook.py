@@ -1,6 +1,6 @@
 import xlsxwriter
 from pathlib import Path
-
+import re
 
 class Workbook:
     workbook = ''
@@ -9,7 +9,8 @@ class Workbook:
         self.initialize_workbook(property_name)
 
     def initialize_workbook(self, property_name):
-        outputFile = Path("./output").joinpath(property_name).with_suffix(".xlsx")
+        sanitized_property_name = property_name.replace(':', '').replace('\\', '')
+        outputFile = Path("./output").joinpath(sanitized_property_name).with_suffix(".xlsx")
 
         self.workbook = xlsxwriter.Workbook(outputFile)
 

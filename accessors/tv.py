@@ -1,11 +1,10 @@
 import tmdbsimple as tmdb
+from formatters.workbooks.tv import WorkbookTV
+from populators.tv import TVPopulator
+from populators.common import CommonPopulator
+
 tmdb.API_KEY = '9115e244e6f77d274bb345abc96fa420'
 
-import pprint
-# import xlsxwriter
-from workbook.tv.tv import WorkbookTV
-
-import logging
 
 class AccessImdbTVSeries:
 
@@ -15,76 +14,50 @@ class AccessImdbTVSeries:
 
 
     @staticmethod
-    def get_series(series_name):
+    def search_and_process_series(raw_series_name):
+        series_id = AccessImdbTVSeries.search_for_series(raw_series_name)
+
+        if series_id:
+            AccessImdbTVSeries.process_series(series_id)
+
+    @staticmethod
+    def search_for_series(raw_series_name):
 
         search = tmdb.Search()
-        response = search.tv(query=series_name)
-        # series = response[0]
-
+        response = search.tv(query=raw_series_name)
         series_id = search.results[0]['id']
+
+        return series_id
+
+    @staticmethod
+    def process_series(series_id):
         series_info = tmdb.TV(series_id).info()
 
         genres = series_info['genres']
-        content_ratings = tmdb.TV(series_id).content_ratings()
+        # origin_countries =
 
+
+        content_ratings = tmdb.TV(series_id).content_ratings()
         rating_US = list(filter(lambda d: d['iso_3166_1'] == 'US', content_ratings['results']))[0]['rating']
 
-        ###
-
-        workbook = WorkbookTV(series_name)
-
-        worksheet_title = workbook.get_title_sheet().get_worksheet()
-        worksheet_genre = workbook.get_genre_sheet().get_worksheet()
-        worksheet_ratings = workbook.get_rating_sheet().get_worksheet()
+        workbook = WorkbookTV(series_info['name'])
 
         for season in series_info['seasons']:
             season_number = season['season_number']
             for episode_number in range(1, season['episode_count']+1):
-                episode = tmdb.TV_Episodes(series_id=series_id, season_number=season_number, episode_number=episode_number)
-                episode_info = episode.info()
-                imdb_id = episode.external_ids()['imdb_id']
+                episode = tmdb.TV_Episodes(series_id=series_id, season_number=season_number,
+                                           episode_number=episode_number)
                 title_code = AccessImdbTVSeries.title_code_for_episode(series_id, season_number, episode_number)
 
-                print("{0:02d}x{1:02d}: {2}".format(season_number, episode_number, episode_info['name']))
+                print("{0:02d}x{1:02d}: {2}".format(season_number, episode_number, episode.info()['name']))
 
-                title_dataset = {
-                    'title_code': title_code,
-                    'title': episode_info['name'],
-                    'type': 'Episodes',
-                    'season_number': season_number,
-                    'episode_number': episode_number,
-                    'tmdb_id':  episode_info['id'],
-                    'imdb_id': imdb_id,
-                    'air_date': episode_info['air_date'],
-                    'production_code': episode_info['production_code'],
-                    'synopsis': episode_info['overview']
-                }
+                TVPopulator.populate_title_sheet(workbook, title_code, season_number, episode_number,
+                                                        episode)
 
-                worksheet_title.write_data_row(title_dataset)
+                CommonPopulator.populate_project_contacts_sheet(workbook, title_code, episode.credits())
 
-                ratings_dataset = {
-                    'title_code': title_code,
-                    'authority': 'MPAA',
-                    'rating': rating_US
-                }
+                CommonPopulator.populate_ratings_sheet(workbook, title_code, rating_US)
 
-                worksheet_ratings.write_data_row(ratings_dataset)
-
-                for genre in genres:
-                    genre_dataset = {
-                        'title_code': title_code,
-                        'genre': genre['name']
-                    }
-                    worksheet_genre.write_data_row(genre_dataset)
-
-
-
-        #         # cast = episode['cast']
-        #
-        #         # for person in cast:
-        #         #     print(person)
-
+                CommonPopulator.populate_genre_sheet(workbook, title_code, genres)
 
         workbook.close_workbook()
-
-

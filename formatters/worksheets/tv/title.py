@@ -1,4 +1,4 @@
-from workbook.worksheet import Worksheet
+from formatters.worksheets.worksheet import Worksheet
 
 
 class TitleSheet(Worksheet):

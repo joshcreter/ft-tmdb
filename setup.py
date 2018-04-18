@@ -137,7 +137,9 @@ setup(
     # install_requires=['peppercorn'],  # Optional
     install_requires=['tmdbsimple',
                       'xlsxwriter',
-                      'dotmap'
+                      'dotmap',
+                      'more_itertools',
+                      'pycountry'
                       ],
 
     # List additional groups of dependencies here (e.g. development

@@ -18,14 +18,15 @@ class Mappers:
             else:
                 output.append([mapped_item])
 
-        # Now flatten the list of lists into a simple list
-        output = reduce(operator.add, output)
+        if output:
+            # Now flatten the list of lists into a simple list
+            output = reduce(operator.add, output)
 
-        # Next deduplicate the flattened list
-        output = list(unique_everseen(output))
+            # Next deduplicate the flattened list
+            output = list(unique_everseen(output))
 
-        # Filter out blank items
-        output = list(filter(None, output))
+            # Filter out blank items
+            output = list(filter(None, output))
 
         return output
 

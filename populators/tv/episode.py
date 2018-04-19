@@ -1,5 +1,5 @@
 from formatters.common import CommonFormatters
-
+import textwrap
 
 class TvEpisodePopulator:
     @staticmethod
@@ -9,17 +9,23 @@ class TvEpisodePopulator:
 
         episode_info = episode.info()
         imdb_id = episode.external_ids()['imdb_id']
-        formatted_title = "{0} - Season {1:02d} - Ep. {2:02d}".format(series_title_formatted,
+        # formatted_title = "{0} - Season {1:02d} - Ep. {2:02d}".format(series_title_formatted,
+        #                                                               season_number,
+        #                                                               episode_number)
+
+        formatted_title = "{0} - Season {1} - Ep. {2}".format(series_title_formatted,
                                                                       season_number,
                                                                       episode_number)
+
+        # formatted_title = "{0} - Season {1:02d} - Ep.{2}".format(series_title_formatted, season_number, episode_number)
 
         dataset = {
             'unique_id': unique_id,
             'parent_id': parent_id,
             'title_code': title_code,
             'season_title_code': season_title_code,
-            'title': episode_info['name'],
-            'formatted_title': formatted_title,
+            'logline': episode_info['name'],
+            'title': formatted_title,
             'type': 'Episodes',
             'season_number': season_number,
             'episode_number': episode_number,
@@ -27,7 +33,7 @@ class TvEpisodePopulator:
             'imdb_id': imdb_id,
             'air_date': CommonFormatters.format_date(episode_info['air_date']),
             'production_code': episode_info['production_code'],
-            'synopsis': episode_info['overview']
+            'synopsis': textwrap.shorten(episode_info['overview'], width=999, placeholder="...")
         }
         worksheet.write_data_row(dataset)
 

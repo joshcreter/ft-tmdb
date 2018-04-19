@@ -1,4 +1,6 @@
 from formatters.common import CommonFormatters
+import textwrap
+
 
 class MovieTitlePopulator:
     @staticmethod
@@ -25,7 +27,7 @@ class MovieTitlePopulator:
             'homepage': movie.info()['homepage'],
             'original_language': CommonFormatters.format_language(movie.info()['original_language']),
             'status': CommonFormatters.format_project_status(movie.info()['status']),
-            'synopsis': movie.info()['overview'],
+            'synopsis': textwrap.shorten(movie.info()['overview'], width=999, placeholder="...")
         }
         worksheet.write_data_row(dataset)
 

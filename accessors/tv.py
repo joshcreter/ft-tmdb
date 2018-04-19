@@ -21,6 +21,7 @@ class SeriesAccessor(CommonAccessor):
         if series_id:
             series = self.tmdb.TV(series_id)
             series_info = series.info()
+            
             workbook = WorkbookTV(series_info['name'])
 
             self.process_series(series_id, workbook, unique_id)
@@ -46,9 +47,10 @@ class SeriesAccessor(CommonAccessor):
         origin_countries = Mappers.map_countries(self.tmdb.TV(series_id).info()['origin_country'])
 
         content_ratings = self.tmdb.TV(series_id).content_ratings()
-        rating_US = list(filter(lambda d: d['iso_3166_1'] == 'US', content_ratings['results']))[0]['rating'].\
-            replace('TV-PG', 'PG')
+        # rating_US = list(filter(lambda d: d['iso_3166_1'] == 'US', content_ratings['results']))[0]['rating'].\
+        #     replace('TV-PG', 'PG')
 
+        rating_US = None
         series_title_code = series_imdb_id
 
         TvSeriesPopulator.populate_series_sheet(workbook, series, series_title_code, formatted_series_name,
@@ -61,7 +63,8 @@ class SeriesAccessor(CommonAccessor):
 
         # unique_id="d9b9d190-f695-492e-bd56-997b6cda27f3"
         for season in series_info['seasons']:
-            if season['season_number'] > 0 and season['season_number'] < 2:
+            # if season['season_number'] > 0 and season['season_number'] < 2:
+            if season['season_number'] > 0:
 
                 unique_id = self.process_season(formatted_series_name, series_title_code, genres, origin_countries, rating_US, season,
                                     series_id, series_imdb_id, workbook, unique_id, unique_id_series)
@@ -84,8 +87,8 @@ class SeriesAccessor(CommonAccessor):
         # if unique_id:
         #     unique_id += 1
 
-        for episode_number in range(1, 2):
-        # for episode_number in range(1, season['episode_count'] + 1):
+        # for episode_number in range(1, 2):
+        for episode_number in range(1, season['episode_count'] + 1):
             unique_id = self.process_episode(episode_number, formatted_series_name, season_title_code, genres, origin_countries,
                                  rating_US, season_number, series_id, series_imdb_id, workbook, unique_id,
                                              unique_id_season)

@@ -1,9 +1,10 @@
 from generators.workbooks.workbookBase import WorkbookBase
-from generators.worksheets.common.genres import GenreSheet
+from generators.worksheets.common.genres import GenresSheet
 from generators.worksheets.common.ratings import RatingsSheet
 from generators.worksheets.common.project_contacts import ProjectContactsSheet
 from generators.worksheets.common.countries_of_origin import CountriesOfOriginSheet
-from generators.worksheets.common.application import ApplicationSheet
+from generators.worksheets.common.applications import ApplicationsSheet
+from generators.worksheets.common.project_groups import ProjectGroupsSheet
 
 
 class WorkbookCommon(WorkbookBase):
@@ -12,17 +13,19 @@ class WorkbookCommon(WorkbookBase):
     projectContactsSheet = ''
     countriesOfOriginSheet = ''
     applicationSheet = ''
+    projectGroupsSheet = ''
 
     def __init__(self, property_name):
         super().__init__(property_name)
         self.generate_workbook()
 
     def generate_workbook(self):
-        self.genreSheet = GenreSheet(self.workbook)
+        self.genreSheet = GenresSheet(self.workbook)
         self.ratingsSheet = RatingsSheet(self.workbook)
         self.projectContactsSheet = ProjectContactsSheet(self.workbook)
         self.countriesOfOriginSheet = CountriesOfOriginSheet(self.workbook)
-        self.applicationSheet = ApplicationSheet(self.workbook)
+        self.applicationSheet = ApplicationsSheet(self.workbook)
+        self.projectGroupsSheet = ProjectGroupsSheet(self.workbook)
 
     def get_genre_sheet(self):
         return self.genreSheet
@@ -38,3 +41,6 @@ class WorkbookCommon(WorkbookBase):
 
     def get_application_sheet(self):
         return self.applicationSheet
+
+    def get_project_groups_sheet(self):
+        return self.projectGroupsSheet

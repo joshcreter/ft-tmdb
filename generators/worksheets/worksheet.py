@@ -9,17 +9,19 @@ class Worksheet:
         self.workbook = workbook
         self.generate_worksheet()
 
-    def write_header_cell(self, worksheet, column_data):
+    def write_header_cell(self, worksheet, column_position, column_data):
         header_format = self.workbook.add_format({'bg_color': 'green'})
 
-        worksheet.write(self.header_row, column_data['position'], column_data['label'], header_format)
-        worksheet.set_column(column_data['position'],  column_data['position'],  column_data['width'])
+        worksheet.write(self.header_row, column_position, column_data['label'], header_format)
+        worksheet.set_column(column_position,  column_position,  column_data['width'])
 
     def generate_worksheet(self):
         worksheet = self.workbook.add_worksheet(self.name)
 
+        column_position = 0
         for column_data in self.columns:
-            self.write_header_cell(worksheet, self.columns[column_data])
+            self.write_header_cell(worksheet, column_position, self.columns[column_data])
+            column_position += 1
 
         self._worksheet = worksheet
 
@@ -30,10 +32,24 @@ class Worksheet:
         return self.columns
 
     def write_data_row(self, dataset):
-        for element in dataset:
-            self.write_data_cell(self.current_row, element, dataset[element])
+        column_position = 0
+        # for element in dataset:
+        #     self.write_data_cell(self.current_row, column_position, dataset[element])
+        #     column_position += 1
+
+        for column_data in self.columns:
+            self.write_data_cell(self.current_row, column_position, dataset[column_data])
+            column_position += 1
+
+        # for element in dataset:
+        #     self.write_data_cell(self.current_row, column_position, dataset[element])
+        #     column_position += 1
+
         self.current_row += 1
 
-    def write_data_cell(self, row, column_name, data):
-        self._worksheet.write(row, self.columns[column_name]['position'], data)
+    def write_data_cell(self, row, column, data):
+        self._worksheet.write(row, column, data)
+
+    # def write_data_cell(self, row, column_name, data):
+    #     self._worksheet.write(row, self.columns[column_name]['position'], data)
 

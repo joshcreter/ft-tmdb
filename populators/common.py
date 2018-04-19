@@ -1,6 +1,6 @@
 class CommonPopulator:
     @staticmethod
-    def populate_application_sheet(workbook, title_code):
+    def populate_applications_sheet(workbook, title_code):
         worksheet = workbook.get_application_sheet().get_worksheet()
 
         applications = ['Avails', 'BizAffairs', 'InvenTrack']
@@ -8,6 +8,18 @@ class CommonPopulator:
             dataset = {
                 'title_code': title_code,
                 'application': application
+            }
+            worksheet.write_data_row(dataset)
+
+    @staticmethod
+    def populate_project_groups_sheet(workbook, title_code):
+        worksheet = workbook.get_project_groups_sheet().get_worksheet()
+
+        project_groups = ['Demo Titles']
+        for project_group in project_groups:
+            dataset = {
+                'title_code': title_code,
+                'project_group': project_group
             }
             worksheet.write_data_row(dataset)
 
@@ -23,7 +35,7 @@ class CommonPopulator:
         worksheet_ratings.write_data_row(ratings_dataset)
 
     @staticmethod
-    def populate_genre_sheet(workbook, title_code, genres):
+    def populate_genres_sheet(workbook, title_code, genres):
         worksheet_genre = workbook.get_genre_sheet().get_worksheet()
         for genre in genres:
             genre_dataset = {

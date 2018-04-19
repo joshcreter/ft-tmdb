@@ -33,7 +33,8 @@ class Mappers:
     def map_genres(genres):
         mapping = {
             "Sci-Fi & Fantasy": ["Sci-Fi", "Fantasy"],
-            "Action & Adventure": ["Action", "Adventure"]
+            "Action & Adventure": ["Action", "Adventure"],
+            "Science Fiction": "Sci-Fi"
         }
 
         genre_list = []
@@ -48,7 +49,11 @@ class Mappers:
             "AU": "Australia",
             "GB": "United Kingdom",
             "MT": "Malta",
-            "US": "United States of America"
+            "US": "United States of America",
+            "CA": "Canada",
+            "ES": "Spain",
+            "JP": "Japan",
+            "DE": "Germany"
         }
 
         return Mappers.map_list(countries, mapping)

@@ -4,6 +4,7 @@ from populators.common import CommonPopulator
 from populators.contacts import ContactsPopulator
 from formatters.common import CommonFormatters
 from formatters.movie import MovieFormatters
+from populators.movie.title import MovieTitlePopulator
 from mappers.mappers import Mappers
 
 
@@ -49,35 +50,35 @@ class MovieAccessor(CommonAccessor):
 
         return movie_id
 
-    def process_movie(self, project, property_title, workbook):
-        property_info = project.info()
+    def process_movie(self, movie, property_title, workbook):
+        movie_info = movie.info()
 
-        imdb_id = project.external_ids()['imdb_id']
+        imdb_id = movie.external_ids()['imdb_id']
 
         formatted_property_name = CommonFormatters.format_project_title(property_title)
 
         title_code = imdb_id
 
-        genres = Mappers.map_genres(property_info['genres'])
+        genres = Mappers.map_genres(movie_info['genres'])
 
-        origin_countries = Mappers.map_countries(
-            company['origin_country'] for company in property_info['production_companies'])
+        # origin_countries = Mappers.map_countries(
+        #     company['origin_country'] for company in movie_info['production_companies'])
+        origin_countries = Mappers.map_countries(country['iso_3166_1'] for country in movie_info['production_countries'])
 
 
         # content_ratings = property.content_ratings()
         # rating_US = list(filter(lambda d: d['iso_3166_1'] == 'US', content_ratings['results']))[0]['rating'].\
         #     replace('TV-PG', 'PG')
 
-        #             TVPopulator.populate_title_sheet(workbook, title_code, season_number, episode_number,
-        #                                                     episode, formatted_series_name)
-        #
+        rating_US = list(filter(lambda d: d['iso_3166_1'] == 'US', movie.releases()['countries']))[0]['certification'].\
+            replace('TV-PG', 'PG')
 
-        ContactsPopulator.populate_project_contacts_sheet(workbook, title_code, project.credits())
+        MovieTitlePopulator.populate_movie_title_sheet(workbook, title_code, movie, imdb_id)
 
-        # CommonPopulator.populate_ratings_sheet(workbook, title_code, rating_US)
-
-        CommonPopulator.populate_genre_sheet(workbook, title_code, genres)
-
+        ContactsPopulator.populate_project_contacts_sheet(workbook, title_code, movie.credits())
+        CommonPopulator.populate_genres_sheet(workbook, title_code, genres)
         CommonPopulator.populate_countries_of_origin_sheet(workbook, title_code, origin_countries)
+        CommonPopulator.populate_applications_sheet(workbook, title_code)
+        CommonPopulator.populate_project_groups_sheet(workbook, title_code)
+        CommonPopulator.populate_ratings_sheet(workbook, title_code, rating_US)
 
-        CommonPopulator.populate_application_sheet(workbook, title_code)

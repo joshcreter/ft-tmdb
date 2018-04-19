@@ -4,18 +4,22 @@ from generators.worksheets.worksheet import Worksheet
 class MovieTitleSheet(Worksheet):
     name = 'Title'
     columns = {
-        # Start from the first cell. Rows and columns are zero indexed.
-        'title_code': {'position': 0, 'label': 'Title Code', 'width': 15.0},
-        'title': {'position': 1, 'label': 'Title', 'width': 30.0},
-        'formatted_title': {'position': 2, 'label': 'Formatted Title', 'width': 30.0},
-        'type':  {'position': 3, 'label': 'Type', 'width': 10.0},
-        'season_number': {'position': 4, 'label': 'Season No', 'width': 10.0},
-        'episode_number': {'position': 5, 'label': 'Episode Number', 'width': 15.0},
-        'tmdb_id': {'position': 6, 'label': 'TMDB ID', 'width': 15.0},
-        'imdb_id': {'position': 7, 'label': 'IMDB ID', 'width': 15.0},
-        'air_date': {'position': 8, 'label': 'Air Date', 'width': 15.0},
-        'production_code': {'position': 9, 'label': 'Production Code', 'width': 15.0},
-        'synopsis': {'position': 10, 'label': 'Synopsis', 'width': 100.0}
+        # 'unique_id': {'label': 'UniqueId', 'width': 15.0},
+        'title_code': {'label': 'TitleCode', 'width': 15.0},
+        # 'title': {'label': 'TitleUnformatted', 'width': 30.0},
+        'formatted_title': {'label': 'Title', 'width': 30.0},
+        'tagline': {'label': 'Logline', 'width': 60.0},
+        'type':  {'label': 'ProjectType', 'width': 10.0},
+        'imdb_id': {'label': 'ImdbCode', 'width': 15.0},
+        'year_completed': {'label': 'YearCompleted', 'width': 15.0},
+        'budget': {'label': 'Budget', 'width': 15.0},
+        'budget_currency': {'label': 'BudgetCurrency', 'width': 15.0},
+        'revenue': {'label': 'BoxOfficeEarningsNote', 'width': 15.0},
+        'revenue_currency': {'label': 'BoxOfficeCurrency', 'width': 15.0},
+        'runtime': {'label': 'RunningTime', 'width': 10.0},
+        'homepage': {'label': 'OfficialWebSite', 'width': 30.0},
+        'original_language':  {'label': 'OriginalLanguage', 'width': 10.0},
+        'synopsis': {'label': 'ShortSynopsis', 'width': 100.0}
     }
 
     def __init__(self, workbook):

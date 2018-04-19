@@ -1,12 +1,11 @@
 from generators.worksheets.worksheet import Worksheet
 
 
-class GenreSheet(Worksheet):
-    name = 'Genre'
+class GenresSheet(Worksheet):
+    name = 'Genres'
     columns = {
-        # Start from the first cell. Rows and columns are zero indexed.
-        'title_code': {'position': 0, 'label': 'Title Code', 'width': 15.0},
-        'genre': {'position': 1, 'label': 'Genre', 'width': 25.0}
+        'title_code': {'label': 'TitleCode', 'width': 15.0},
+        'genre': {'label': 'Genre', 'width': 25.0}
     }
 
     def __init__(self, workbook):

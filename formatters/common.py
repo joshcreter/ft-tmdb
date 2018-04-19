@@ -11,10 +11,35 @@ class CommonFormatters:
 
         return project_title
 
-
-
     @staticmethod
     def format_date(input_date):
         output_date = datetime.strptime(input_date, "%Y-%m-%d").date().strftime("%m/%d/%Y")
 
         return output_date
+
+    @staticmethod
+    def format_date_year_only(input_date):
+        output_date = datetime.strptime(input_date, "%Y-%m-%d").date().strftime("%Y")
+
+        return output_date
+
+    @staticmethod
+    def format_language(input_language):
+        mapping = {
+            'en': 'English'
+        }
+
+        output = mapping.get(input_language, None)
+        return output
+
+    @staticmethod
+    def format_project_status(status):
+        mapping = {
+            'Planned': 'Development',
+            'In Production': 'Production',
+            'Post Production': 'Post-Production',
+            'Released': 'Catalog'
+        }
+
+        output = mapping.get(status, None)
+        return output

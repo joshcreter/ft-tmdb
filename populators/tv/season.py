@@ -14,7 +14,7 @@ class TvSeasonPopulator:
             'series_title_code': series_title_code,
             'title': season['name'],
             'formatted_title': season_title_formatted,
-            'type': 'Season'
+            'type': 'Seasons'
         }
         worksheet.write_data_row(dataset)
 

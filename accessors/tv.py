@@ -57,9 +57,12 @@ class SeriesAccessor(CommonAccessor):
                                                 series_imdb_id, unique_id)
 
         # unique_id_series = unique_id
-        unique_id_series = "7acd9516-3343-e811-9450-0a8d4423fe52"
-        if unique_id:
-            unique_id += 1
+        # unique_id_series = "7acd9516-3343-e811-9450-0a8d4423fe52"
+        # if unique_id:
+        #     unique_id += 1
+
+        unique_id = formatted_series_name
+        unique_id_series = formatted_series_name
 
         # unique_id="d9b9d190-f695-492e-bd56-997b6cda27f3"
         for season in series_info['seasons']:
@@ -82,8 +85,8 @@ class SeriesAccessor(CommonAccessor):
         TvSeasonPopulator.populate_season_sheet(workbook, season, season_title_code, series_title_code,
                                                 formatted_season_name, unique_id, unique_id_series)
         
-        unique_id_season = unique_id
-
+        # unique_id_season = unique_id
+        unique_id_season = formatted_season_name
         # if unique_id:
         #     unique_id += 1
 

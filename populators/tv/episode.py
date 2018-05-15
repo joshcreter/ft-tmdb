@@ -9,13 +9,13 @@ class TvEpisodePopulator:
 
         episode_info = episode.info()
         imdb_id = episode.external_ids()['imdb_id']
-        # formatted_title = "{0} - Season {1:02d} - Ep. {2:02d}".format(series_title_formatted,
-        #                                                               season_number,
-        #                                                               episode_number)
-
-        formatted_title = "{0} - Season {1} - Ep. {2}".format(series_title_formatted,
+        formatted_title = "{0} - Season {1:02d} - Ep. {2:02d}".format(series_title_formatted,
                                                                       season_number,
                                                                       episode_number)
+
+        # formatted_title = "{0} - Season {1} - Ep. {2}".format(series_title_formatted,
+        #                                                               season_number,
+        #                                                               episode_number)
 
         # formatted_title = "{0} - Season {1:02d} - Ep.{2}".format(series_title_formatted, season_number, episode_number)
 

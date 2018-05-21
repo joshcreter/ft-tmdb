@@ -19,7 +19,8 @@ class MovieTitleSheet(Worksheet):
         'runtime': {'label': 'RunningTime', 'width': 10.0},
         'homepage': {'label': 'OfficialWebSite', 'width': 30.0},
         'original_language':  {'label': 'OriginalLanguage', 'width': 10.0},
-        'synopsis': {'label': 'ShortSynopsis', 'width': 100.0}
+        'synopsis': {'label': 'ShortSynopsis', 'width': 100.0},
+        'original_format': {'label': 'OriginalFormat', 'width': 15.0},
     }
 
     def __init__(self, workbook):

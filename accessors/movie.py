@@ -65,6 +65,7 @@ class MovieAccessor(CommonAccessor):
         #     company['origin_country'] for company in movie_info['production_companies'])
         origin_countries = Mappers.map_countries(country['iso_3166_1'] for country in movie_info['production_countries'])
 
+        localizations = movie.translations()
 
         # content_ratings = property.content_ratings()
         # rating_US = list(filter(lambda d: d['iso_3166_1'] == 'US', content_ratings['results']))[0]['rating'].\
@@ -81,4 +82,4 @@ class MovieAccessor(CommonAccessor):
         CommonPopulator.populate_applications_sheet(workbook, title_code)
         CommonPopulator.populate_project_groups_sheet(workbook, title_code)
         CommonPopulator.populate_ratings_sheet(workbook, title_code, rating_US)
-
+        CommonPopulator.populate_localizations_sheet(workbook, title_code, localizations, property_title)

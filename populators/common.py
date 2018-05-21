@@ -53,3 +53,23 @@ class CommonPopulator:
                 'country': country
             }
             worksheet.write_data_row(dataset)
+
+    @staticmethod
+    def populate_localizations_sheet(workbook, title_code, localizations, formatted_title):
+        worksheet = workbook.get_localizations_sheet().get_worksheet()
+
+        allowed_localization_codes = ['af', 'ar', 'az', 'be', 'bg', 'ca', 'cs', 'da', 'de', 'div', 'el', 'es', 'et',
+                                      'eu', 'fa', 'fi', 'fil', 'fo', 'fr', 'gl', 'gu', 'he', 'hi', 'hr', 'hu', 'hy',
+                                      'id', 'is', 'it', 'ja', 'ka', 'kk', 'kn', 'ko', 'kok', 'ky', 'lt', 'lv', 'mk',
+                                      'mn', 'mr', 'ms', 'nl', 'no', 'pa', 'pl', 'pt', 'ro', 'ru', 'sa', 'sk', 'sl',
+                                      'sq', 'sv', 'sw', 'syr', 'ta', 'te', 'th', 'tr', 'tt', 'uk', 'ur', 'uz', 'vi']
+
+        for localization in localizations['translations']:
+            if localization['iso_639_1'] in allowed_localization_codes:
+                dataset = {
+                    'title_code': title_code,
+                    'culture': localization['iso_639_1'],
+                    'title': localization['data']['title'] if len(localization['data']['title']) > 0 else formatted_title,
+                    'synopsis': localization['data']['overview']
+                }
+                worksheet.write_data_row(dataset)

@@ -5,7 +5,7 @@ from generators.worksheets.common.project_contacts import ProjectContactsSheet
 from generators.worksheets.common.countries_of_origin import CountriesOfOriginSheet
 from generators.worksheets.common.applications import ApplicationsSheet
 from generators.worksheets.common.project_groups import ProjectGroupsSheet
-
+from generators.worksheets.common.localizations import LocalizationSheet
 
 class WorkbookCommon(WorkbookBase):
     genreSheet = ''
@@ -14,6 +14,7 @@ class WorkbookCommon(WorkbookBase):
     countriesOfOriginSheet = ''
     applicationSheet = ''
     projectGroupsSheet = ''
+    localizationsSheet = ''
 
     def __init__(self, property_name):
         super().__init__(property_name)
@@ -26,6 +27,7 @@ class WorkbookCommon(WorkbookBase):
         self.countriesOfOriginSheet = CountriesOfOriginSheet(self.workbook)
         self.applicationSheet = ApplicationsSheet(self.workbook)
         self.projectGroupsSheet = ProjectGroupsSheet(self.workbook)
+        self.localizationsSheet = LocalizationSheet(self.workbook)
 
     def get_genre_sheet(self):
         return self.genreSheet
@@ -44,3 +46,6 @@ class WorkbookCommon(WorkbookBase):
 
     def get_project_groups_sheet(self):
         return self.projectGroupsSheet
+
+    def get_localizations_sheet(self):
+        return self.localizationsSheet

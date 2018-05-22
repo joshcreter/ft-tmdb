@@ -139,7 +139,8 @@ setup(
                       'xlsxwriter',
                       'dotmap',
                       'more_itertools',
-                      'pycountry'
+                      'pycountry',
+                      'sparqlwrapper'
                       ],
 
     # List additional groups of dependencies here (e.g. development

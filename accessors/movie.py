@@ -6,7 +6,7 @@ from formatters.common import CommonFormatters
 from formatters.movie import MovieFormatters
 from populators.movie.title import MovieTitlePopulator
 from mappers.mappers import Mappers
-
+from accessors.awards import AwardsAccessor
 
 class MovieAccessor(CommonAccessor):
     def __init__(self):
@@ -55,6 +55,8 @@ class MovieAccessor(CommonAccessor):
 
         imdb_id = movie.external_ids()['imdb_id']
 
+        awards = AwardsAccessor.get_awards(imdb_id)
+
         formatted_property_name = CommonFormatters.format_project_title(property_title)
 
         title_code = imdb_id
@@ -85,3 +87,4 @@ class MovieAccessor(CommonAccessor):
         CommonPopulator.populate_ratings_sheet(workbook, title_code, rating_US)
         CommonPopulator.populate_localizations_sheet(workbook, title_code, localizations, property_title)
         CommonPopulator.populate_timeline_sheet(workbook, title_code, release_dates)
+        CommonPopulator.populate_awards_sheet(workbook, title_code, awards)

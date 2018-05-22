@@ -8,10 +8,14 @@ certifi==2018.4.16        # via requests
 chardet==3.0.4            # via requests
 dotmap==1.2.20
 idna==2.6                 # via requests
+isodate==0.6.0            # via rdflib
 more-itertools==4.1.0
 pycountry==18.2.23
+pyparsing==2.2.0          # via rdflib
+rdflib==4.2.2             # via sparqlwrapper
 requests==2.18.4          # via tmdbsimple
-six==1.11.0               # via more-itertools
+six==1.11.0               # via isodate, more-itertools
+sparqlwrapper==1.8.2
 tmdbsimple==2.2.0
 urllib3==1.22             # via requests
 xlsxwriter==1.0.4

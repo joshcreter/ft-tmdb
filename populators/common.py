@@ -89,3 +89,18 @@ class CommonPopulator:
                 'media': release_date['media'],
             }
             worksheet.write_data_row(dataset)
+
+    @staticmethod
+    def populate_awards_sheet(workbook, title_code, awards):
+        worksheet = workbook.get_awards_sheet().get_worksheet()
+
+        for award in awards:
+            dataset = {
+                'title_code': title_code,
+                'result': award['result'],
+                'year': award['year'],
+                'organization': award['organization'],
+                'trophy': award['trophy'],
+                'category': award['category'],
+            }
+            worksheet.write_data_row(dataset)

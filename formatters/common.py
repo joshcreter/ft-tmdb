@@ -22,6 +22,9 @@ class CommonFormatters:
 
     @staticmethod
     def format_date_year_only(input_date):
+        if "T" in input_date:
+            input_date = input_date[:input_date.index("T")]
+
         output_date = datetime.strptime(input_date, "%Y-%m-%d").date().strftime("%Y")
 
         return output_date

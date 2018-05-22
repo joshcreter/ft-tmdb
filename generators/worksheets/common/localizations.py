@@ -1,5 +1,6 @@
 from generators.worksheets.worksheet import Worksheet
 
+
 class LocalizationSheet(Worksheet):
     name = 'Localizations'
     columns = {

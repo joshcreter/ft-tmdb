@@ -13,6 +13,9 @@ class CommonFormatters:
 
     @staticmethod
     def format_date(input_date):
+        if "T" in input_date:
+            input_date = input_date[:input_date.index("T")]
+
         output_date = datetime.strptime(input_date, "%Y-%m-%d").date().strftime("%m/%d/%Y")
 
         return output_date

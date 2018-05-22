@@ -60,6 +60,7 @@ class MovieAccessor(CommonAccessor):
         title_code = imdb_id
 
         genres = Mappers.map_genres(movie_info['genres'])
+        release_dates = Mappers.map_release_dates(movie.release_dates())
 
         # origin_countries = Mappers.map_countries(
         #     company['origin_country'] for company in movie_info['production_companies'])
@@ -83,3 +84,4 @@ class MovieAccessor(CommonAccessor):
         CommonPopulator.populate_project_groups_sheet(workbook, title_code)
         CommonPopulator.populate_ratings_sheet(workbook, title_code, rating_US)
         CommonPopulator.populate_localizations_sheet(workbook, title_code, localizations, property_title)
+        CommonPopulator.populate_timeline_sheet(workbook, title_code, release_dates)

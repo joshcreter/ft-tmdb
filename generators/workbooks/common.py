@@ -6,6 +6,7 @@ from generators.worksheets.common.countries_of_origin import CountriesOfOriginSh
 from generators.worksheets.common.applications import ApplicationsSheet
 from generators.worksheets.common.project_groups import ProjectGroupsSheet
 from generators.worksheets.common.localizations import LocalizationSheet
+from generators.worksheets.common.timeline import TimelineSheet
 
 class WorkbookCommon(WorkbookBase):
     genreSheet = ''
@@ -15,6 +16,7 @@ class WorkbookCommon(WorkbookBase):
     applicationSheet = ''
     projectGroupsSheet = ''
     localizationsSheet = ''
+    timelineSheet = ''
 
     def __init__(self, property_name):
         super().__init__(property_name)
@@ -28,6 +30,7 @@ class WorkbookCommon(WorkbookBase):
         self.applicationSheet = ApplicationsSheet(self.workbook)
         self.projectGroupsSheet = ProjectGroupsSheet(self.workbook)
         self.localizationsSheet = LocalizationSheet(self.workbook)
+        self.timelineSheet = TimelineSheet(self.workbook)
 
     def get_genre_sheet(self):
         return self.genreSheet
@@ -49,3 +52,6 @@ class WorkbookCommon(WorkbookBase):
 
     def get_localizations_sheet(self):
         return self.localizationsSheet
+
+    def get_timeline_sheet(self):
+        return self.timelineSheet

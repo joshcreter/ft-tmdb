@@ -73,3 +73,19 @@ class CommonPopulator:
                     'synopsis': localization['data']['overview']
                 }
                 worksheet.write_data_row(dataset)
+
+
+    @staticmethod
+    def populate_timeline_sheet(workbook, title_code, release_dates):
+        worksheet = workbook.get_timeline_sheet().get_worksheet()
+
+        for release_date in release_dates:
+            dataset = {
+                'title_code': title_code,
+                'territory': release_date['territory'],
+                'start_date': release_date['start_date'],
+                'type': release_date['type'],
+                'note': release_date['note'],
+                'media': release_date['media'],
+            }
+            worksheet.write_data_row(dataset)

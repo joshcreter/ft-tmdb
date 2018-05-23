@@ -66,6 +66,7 @@ class Mappers:
             'AR': 'Argentina',
             'AU': 'Australia',
             'AT': 'Austria',
+            'AZ': 'Azerbaijan',
             'BS': 'Bahamas',
             'BH': 'Bahrain',
             'BD': 'Bangladesh',
@@ -74,7 +75,7 @@ class Mappers:
             'BZ': 'Belize',
             'BJ': 'Benin',
             'BT': 'Bhutan',
-            'BO': 'Boliva',
+            'BO': 'Bolivia',
             'BA': 'Bosnia and Herzegovina',
             'BW': 'Botswana',
             'BR': 'Brazil',
@@ -82,6 +83,7 @@ class Mappers:
             'BG': 'Bulgaria',
             'BF': 'Burkina-Faso',
             'BI': 'Burundi',
+            'KH': 'Cambodia',
             'CM': 'Cameroon',
             'CA': 'Canada',
             'CF': 'Central Africa Republic',
@@ -113,6 +115,7 @@ class Mappers:
             'GF': 'French Guyana',
             'GA': 'Gabon',
             'GM': 'Gambia',
+            'GE': 'Georgia',
             'DE': 'Germany',
             'GH': 'Ghana',
             'GR': 'Greece',
@@ -147,7 +150,7 @@ class Mappers:
             'LY': 'Libya',
             'LT': 'Lithuania',
             'LU': 'Luxembourg',
-            'MK': 'Macdeonia',
+            'MK': 'Macedonia',
             'MG': 'Madagascar',
             'MW': 'Malawi',
             'MY': 'Malaysia',
@@ -192,6 +195,7 @@ class Mappers:
             'RS': 'Serbia and Montenegro',
             'SL': 'Sierra Leone',
             'SG': 'Singapore',
+            'SK': 'Slovakia',
             'SI': 'Slovenia',
             'SO': 'Somalia',
             'ZA': 'South Africa',
@@ -202,6 +206,7 @@ class Mappers:
             'SE': 'Sweden',
             'CH': 'Switzerland',
             'SY': 'Syria',
+            'TW': 'Taiwan, Province of China',
             'TJ': 'Tajikistan',
             'TZ': 'Tanzania',
             'TH': 'Thailand',
@@ -219,10 +224,12 @@ class Mappers:
             'UY': 'Uruguay',
             'UZ': 'Uzbekistan',
             'VE': 'Venezuela',
+            'VN': 'Vietnam',
             'EH': 'Western Sahara',
             'YE': 'Yemen',
             'ZM': 'Zambia',
-            'ZW': 'Zimbabwe'
+            'ZW': 'Zimbabwe',
+            'SU': 'Russia',
         }
         return Mappers.map_list(countries, mapping)
 
@@ -243,7 +250,7 @@ class Mappers:
             3: "Theatrical",
             4: "Internet",
             5: "DVD",
-            6: "Television",
+            6: "Free TV",
         }
 
         timeline = []
@@ -265,15 +272,22 @@ class Mappers:
     @staticmethod
     def map_award(award_title):
         organization_mapping = {
-            "Academy": "Academy of Motion Pictures Arts and Sciences",
+            "Academy": "Academy of Motion Picture Arts and Sciences",
             "BAFTA": "British Academy of Film and Television Arts",
             "César": "Académie des Arts et Techniques du Cinéma",
             "Amanda": "Norwegian International Film Festival"
         }
 
+        # trophy_mapping = {
+        #     "Academy": "Oscar",
+        #     "BAFTA": "BAFTA Award",
+        #     "César": "César Award",
+        #     "Amanda": "Amanda Award"
+        # }
+
         trophy_mapping = {
-            "Academy": "Oscar",
-            "BAFTA": "BAFTA Film Award ",
+            "Academy": "Academy Award",
+            "BAFTA": "BAFTA Award",
             "César": "César Award",
             "Amanda": "Amanda Award"
         }
@@ -324,12 +338,33 @@ class Mappers:
             "Best Production Design": "Best Production Design",
             "Best Writing, Adapted Screenplay": "Best Writing, Adapted Screenplay",
             "Best Foreign Feature Film": "Best Foreign Feature Film",
+            "Best Film Editing": "Best Film Editing",
+            "Best Cinematography, Color": "Best Cinematography, Color",
+            "Best Score, Adaptation or Treatment": "Best Score, Adaptation or Treatment",
+            "Best Film": "Best Film",
+            "Best Writing, Original Screenplay": "Best Writing, Original Screenplay",
+            "Best Original Song Score": "Best Original Song Score",
+            "Best Cinematography, Black-and-White": "Best Cinematography, Black-and-White",
+            "Best Art Direction, Color": "Best Art Direction, Color",
+            "Best Original Musical Score": "Best Original Musical Score",
+            "Best Costume Design, Color": "Best Costume Design, Color",
+            "Best Costume Design, Black-and-White": "Best Costume Design, Black-and-White",
+            "Best Art Direction, Black and White": "Best Art Direction, Black and White",
         }
 
-        organization = organization_mapping.get(award_title[:award_title.index(" Award for")])
-        trophy = trophy_mapping.get(award_title[:award_title.index(" Award for")])
-        raw_category = award_title[award_title.index(" Award for ")+len(" Award for "):]
-        category = category_mapping.get(raw_category, None)
+        organization = None
+        trophy = None
+        category = None
+
+        if award_title.find(" Award for") > 0:
+            organization = organization_mapping.get(award_title[:award_title.index(" Award for")])
+            trophy = trophy_mapping.get(award_title[:award_title.index(" Award for")])
+            raw_category = award_title[award_title.index(" Award for ")+len(" Award for "):]
+            category = category_mapping.get(raw_category, None)
+
+        else:
+            print(award_title)
+            # quit()
 
         if organization and trophy and category:
             award = {

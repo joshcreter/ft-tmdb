@@ -7,6 +7,10 @@ from formatters.movie import MovieFormatters
 from populators.movie.title import MovieTitlePopulator
 from mappers.mappers import Mappers
 from accessors.awards import AwardsAccessor
+from functools import reduce
+import operator
+from more_itertools import unique_everseen
+
 
 class MovieAccessor(CommonAccessor):
     def __init__(self):
@@ -15,11 +19,19 @@ class MovieAccessor(CommonAccessor):
     def search_and_process_movielist(self, movielist):
         workbook = WorkbookMovie("movies")
 
+        merged_contacts = []
+
         with open(movielist, 'r') as f:
             for movie in f:
                 movie = movie.strip()
 
-                self.search_and_process_movie(movie, workbook)
+                contacts = self.search_and_process_movie(movie, workbook)
+                merged_contacts.append(contacts)
+
+        merged_contacts = reduce(operator.add, merged_contacts)
+        merged_contacts = list(unique_everseen(merged_contacts))
+
+        ContactsPopulator.populate_contacts_merged_sheet(workbook, merged_contacts)
 
         workbook.close_workbook()
 
@@ -34,13 +46,16 @@ class MovieAccessor(CommonAccessor):
 
             print(property_title)
 
+            contacts = []
             if workbook:
-                self.process_movie(project, property_title, workbook)
+                contacts = self.process_movie(project, property_title, workbook)
 
             else:
                 workbook = WorkbookMovie(property_title)
-                self.process_movie(project, property_title, workbook)
+                contacts = self.process_movie(project, property_title, workbook)
                 workbook.close_workbook()
+
+            return contacts
 
     def search_for_movie(self, raw_movie_name):
 
@@ -79,7 +94,7 @@ class MovieAccessor(CommonAccessor):
 
         MovieTitlePopulator.populate_movie_title_sheet(workbook, title_code, movie, imdb_id)
 
-        ContactsPopulator.populate_project_contacts_sheet(workbook, title_code, movie.credits())
+        contacts = ContactsPopulator.populate_project_contacts_sheet(workbook, title_code, movie.credits())
         CommonPopulator.populate_genres_sheet(workbook, title_code, genres)
         CommonPopulator.populate_countries_of_origin_sheet(workbook, title_code, origin_countries)
         CommonPopulator.populate_applications_sheet(workbook, title_code)
@@ -88,3 +103,5 @@ class MovieAccessor(CommonAccessor):
         CommonPopulator.populate_localizations_sheet(workbook, title_code, localizations, property_title)
         CommonPopulator.populate_timeline_sheet(workbook, title_code, release_dates)
         CommonPopulator.populate_awards_sheet(workbook, title_code, awards)
+
+        return(contacts)

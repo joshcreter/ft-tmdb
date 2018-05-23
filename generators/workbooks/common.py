@@ -8,6 +8,8 @@ from generators.worksheets.common.project_groups import ProjectGroupsSheet
 from generators.worksheets.common.localizations import LocalizationSheet
 from generators.worksheets.common.timeline import TimelineSheet
 from generators.worksheets.common.awards import AwardsSheet
+from generators.worksheets.common.contacts_merged import ContactsMergedSheet
+
 
 class WorkbookCommon(WorkbookBase):
     genreSheet = ''
@@ -19,6 +21,7 @@ class WorkbookCommon(WorkbookBase):
     localizationsSheet = ''
     timelineSheet = ''
     awardsSheet = ''
+    contactsMergedSheet = ''
 
     def __init__(self, property_name):
         super().__init__(property_name)
@@ -34,6 +37,7 @@ class WorkbookCommon(WorkbookBase):
         self.localizationsSheet = LocalizationSheet(self.workbook)
         self.timelineSheet = TimelineSheet(self.workbook)
         self.awardsSheet = AwardsSheet(self.workbook)
+        self.contactsMergedSheet = ContactsMergedSheet(self.workbook)
 
     def get_genre_sheet(self):
         return self.genreSheet
@@ -61,3 +65,6 @@ class WorkbookCommon(WorkbookBase):
 
     def get_awards_sheet(self):
         return self.awardsSheet
+
+    def get_contacts_merged_sheet(self):
+        return self.contactsMergedSheet

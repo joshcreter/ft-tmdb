@@ -1,12 +1,10 @@
 from generators.worksheets.worksheet import Worksheet
 
 
-class ProjectContactsSheet(Worksheet):
-    name = 'Contacts'
+class ContactsMergedSheet(Worksheet):
+    name = 'Contacts Merged'
     columns = {
-        'title_code': {'label': 'TitleCode', 'width': 15.0},
         'name': {'label': 'Name', 'width': 40.0},
-        'role':  {'label': 'Role', 'width': 25.0}
     }
 
     def __init__(self, workbook):

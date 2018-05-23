@@ -39,7 +39,9 @@ class Worksheet:
 
         for column_data in self.columns:
             # print(column_data)
-            self.write_data_cell(self.current_row, column_position, dataset[column_data])
+            data = dataset.get(column_data, None)
+            if data:
+                self.write_data_cell(self.current_row, column_position, dataset[column_data])
             column_position += 1
 
         # for element in dataset:

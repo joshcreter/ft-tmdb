@@ -38,10 +38,14 @@ class AwardsAccessor:
                 ORDER BY DESC(?time)"""
 
         query = query % (imdb_id)
+        # print (query)
 
         sparql.setQuery(query)
         sparql.setReturnFormat(JSON)
         results = sparql.query().convert()
+
+        # print(results)
+        # quit()
 
         output = []
 

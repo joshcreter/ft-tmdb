@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import argparse
 from accessors.movie import MovieAccessor
-from accessors.tv import SeriesAccessor
+from accessors.processors import SeriesAccessor
 
 def main():
     parser = argparse.ArgumentParser()
@@ -19,7 +19,7 @@ def main():
         movie_accessor = MovieAccessor()
         movie_accessor.search_and_process_movie(property_name)
 
-    if scrape_type == 'tv':
+    if scrape_type == 'processors':
         series_accessor = SeriesAccessor()
         series_accessor.search_and_process_series(property_name, unique_id_start)
 

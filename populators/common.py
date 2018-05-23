@@ -66,13 +66,21 @@ class CommonPopulator:
 
         for localization in localizations['translations']:
             if localization['iso_639_1'] in allowed_localization_codes:
-                dataset = {
-                    'title_code': title_code,
-                    'culture': localization['iso_639_1'],
-                    'title': localization['data']['title'] if len(localization['data']['title']) > 0 else formatted_title,
-                    'synopsis': localization['data']['overview']
-                }
-                worksheet.write_data_row(dataset)
+                if len(localization['data']['overview']) > 0:
+
+                    title = formatted_title
+                    if len(localization['data'].get('title', '')) > 0:
+                        title = localization['data']['title']
+                    elif len(localization['data'].get('name', '')) > 0:
+                        title = localization['data']['name']
+
+                    dataset = {
+                        'title_code': title_code,
+                        'culture': localization['iso_639_1'],
+                        'title': title,
+                        'synopsis': localization['data']['overview']
+                    }
+                    worksheet.write_data_row(dataset)
 
 
     @staticmethod

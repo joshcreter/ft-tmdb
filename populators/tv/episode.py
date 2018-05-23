@@ -4,7 +4,7 @@ import textwrap
 class TvEpisodePopulator:
     @staticmethod
     def populate_episode_sheet(workbook, title_code, season_title_code, season_number, episode_number, episode,
-                               series_title_formatted, unique_id=None, parent_id=None):
+                               series_title_formatted):
         worksheet = workbook.get_tv_episode_sheet().get_worksheet()
 
         episode_info = episode.info()
@@ -20,8 +20,6 @@ class TvEpisodePopulator:
         # formatted_title = "{0} - Season {1:02d} - Ep.{2}".format(series_title_formatted, season_number, episode_number)
 
         dataset = {
-            'unique_id': unique_id,
-            'parent_id': parent_id,
             'title_code': title_code,
             'season_title_code': season_title_code,
             'logline': episode_info['name'],

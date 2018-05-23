@@ -1,21 +1,20 @@
+from generators.worksheets.worksheet import Worksheet
 from functools import reduce
 import operator
 
 
 class ContactsPopulator:
     @staticmethod
-    def populate_project_contacts_sheet(workbook, title_code, credits):
+    def populate_project_contacts_sheet(worksheet: Worksheet, title_code, credits):
 
-        contacts_cast = ContactsPopulator.populate_project_contacts_sheet_cast(workbook, title_code, credits)
-        contacts_crew = ContactsPopulator.populate_project_contacts_sheet_crew(workbook, title_code, credits)
+        contacts_cast = ContactsPopulator.populate_project_contacts_sheet_cast(worksheet, title_code, credits)
+        contacts_crew = ContactsPopulator.populate_project_contacts_sheet_crew(worksheet, title_code, credits)
 
         contacts = reduce(operator.add, [contacts_cast, contacts_crew])
         return contacts
 
     @staticmethod
-    def populate_project_contacts_sheet_cast(workbook, title_code, credits):
-        worksheet = workbook.get_project_contacts_sheet().get_worksheet()
-
+    def populate_project_contacts_sheet_cast(worksheet: Worksheet, title_code, credits):
         cast_order_cutoff = 5
 
         filtered_cast = list(filter(lambda d: d['order'] <= cast_order_cutoff, credits['cast']))
@@ -32,9 +31,7 @@ class ContactsPopulator:
         return contacts
 
     @staticmethod
-    def populate_project_contacts_sheet_crew(workbook, title_code, credits):
-        worksheet = workbook.get_project_contacts_sheet().get_worksheet()
-
+    def populate_project_contacts_sheet_crew(worksheet: Worksheet, title_code, credits):
         whitelisted_crew_jobs = ['Director', 'Producer', 'Co-Producer', 'Writer', 'Executive Producer',
                                  'Consulting Producer', 'Screenplay']
 
@@ -60,7 +57,6 @@ class ContactsPopulator:
 
     @staticmethod
     def populate_contacts_merged_sheet(workbook, credits):
-
         worksheet = workbook.get_contacts_merged_sheet().get_worksheet()
 
         for person in credits:

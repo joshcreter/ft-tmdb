@@ -4,8 +4,6 @@ from generators.worksheets.worksheet import Worksheet
 class TvEpisodeSheet(Worksheet):
     name = 'Episode'
     columns = {
-        'unique_id': {'label': 'Unique ID', 'width': 15.0},
-        'parent_id': {'label': 'Parent ID', 'width': 30.0},
         'title_code': {'label': 'TitleCode', 'width': 15.0},
         'season_title_code': {'label': 'Season Title Code', 'width': 15.0},
         'title': {'label': 'Title', 'width': 30.0},

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import argparse
-from accessors.tv import SeriesAccessor
+from accessors import tv
 
 
 def main():
@@ -11,7 +11,7 @@ def main():
 
     series = args.series
 
-    series_accessor = SeriesAccessor()
+    series_accessor = tv.SeriesAccessor()
 
     series_accessor.search_and_process_series(series)
 

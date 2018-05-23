@@ -1,18 +1,19 @@
 from formatters.common import CommonFormatters
+import tmdbsimple as tmdb
+from generators.workbooks.tv import WorkbookTV
 
 
 class TvSeasonPopulator:
     @staticmethod
-    def populate_season_sheet(workbook, season, title_code, series_title_code, season_title_formatted, unique_id=None,
-                              parent_id=None):
+    def populate_season_sheet(workbook: WorkbookTV, title_code: str, series_title_code: str,
+                              season_title_formatted: str,
+                              parent_id: str=None):
         worksheet = workbook.get_tv_season_sheet().get_worksheet()
 
         dataset = {
-            'unique_id': unique_id,
             'parent_id': parent_id,
             'title_code': title_code,
             'series_title_code': series_title_code,
-            'title': season['name'],
             'formatted_title': season_title_formatted,
             'type': 'Seasons'
         }

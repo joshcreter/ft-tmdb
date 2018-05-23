@@ -2,18 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f07871bf-df6f-4804-921e-5eab1dbe2044" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/generators/worksheets/common/contacts_merged.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies-no-contacts.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/movies-small.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessors/processors/episode.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessors/processors/season.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessors/processors/series.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generators/worksheets/tv/episode_contacts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generators/worksheets/tv/season_contacts.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/generators/worksheets/tv/series_contacts.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessors/movie.py" beforeDir="false" afterPath="$PROJECT_DIR$/accessors/movie.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generators/workbooks/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/generators/workbooks/common.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generators/worksheets/common/project_contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/generators/worksheets/common/project_contacts.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mappers/mappers.py" beforeDir="false" afterPath="$PROJECT_DIR$/mappers/mappers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies-bad.txt" beforeDir="false" afterPath="$PROJECT_DIR$/movies-bad.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/movies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/movies.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/movies.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/output/movies.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessors/awards.py" beforeDir="false" afterPath="$PROJECT_DIR$/accessors/awards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessors/tv.py" beforeDir="false" afterPath="$PROJECT_DIR$/accessors/tv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatters/tv.py" beforeDir="false" afterPath="$PROJECT_DIR$/formatters/tv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/workbooks/tv.py" beforeDir="false" afterPath="$PROJECT_DIR$/generators/workbooks/tv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/worksheets/tv/episode.py" beforeDir="false" afterPath="$PROJECT_DIR$/generators/worksheets/tv/episode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/generators/worksheets/worksheet.py" beforeDir="false" afterPath="$PROJECT_DIR$/generators/worksheets/worksheet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/The Big Bang Theory.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/output/The Big Bang Theory.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populators/common.py" beforeDir="false" afterPath="$PROJECT_DIR$/populators/common.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/populators/contacts.py" beforeDir="false" afterPath="$PROJECT_DIR$/populators/contacts.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populators/tv/episode.py" beforeDir="false" afterPath="$PROJECT_DIR$/populators/tv/episode.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/populators/tv/season.py" beforeDir="false" afterPath="$PROJECT_DIR$/populators/tv/season.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrape-series.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape-series.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scrape.py" beforeDir="false" afterPath="$PROJECT_DIR$/scrape.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,68 +32,86 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="movie.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/accessors/movie.py">
+      <file leaf-file-name="tv.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generators/workbooks/tv.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
+            <state relative-caret-position="600">
+              <caret line="46" selection-start-line="46" selection-end-line="46" />
               <folding>
-                <element signature="e#0#43#0" expanded="true" />
+                <element signature="e#0#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contacts_merged.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generators/worksheets/common/contacts_merged.py">
+      <file leaf-file-name="episode_contacts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/episode_contacts.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+              <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="countries_of_origin.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generators/worksheets/common/countries_of_origin.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="movies.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/movies.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="movies-no-contacts.txt" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/movies-no-contacts.txt">
+      <file leaf-file-name="season_contacts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/season_contacts.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="45">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movies-bad.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/movies-bad.txt">
+      <file leaf-file-name="series.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/accessors/processors/series.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
+            <state relative-caret-position="364">
+              <caret line="68" selection-start-line="68" selection-end-line="68" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movies-small.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/movies-small.txt">
+      <file leaf-file-name="worksheet.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generators/worksheets/worksheet.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
+            <state>
+              <caret column="6" selection-start-column="6" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tv.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accessors/tv.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="435">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="episode.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accessors/processors/episode.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+              <folding>
+                <element signature="e#0#46#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="season.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/accessors/processors/season.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="45">
+              <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="49" />
             </state>
           </provider>
         </entry>
@@ -93,32 +119,20 @@
       <file leaf-file-name="contacts.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/populators/contacts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+            <state relative-caret-position="480">
+              <caret line="34" selection-start-line="34" selection-end-line="34" />
               <folding>
-                <element signature="e#0#28#0" expanded="true" />
+                <element signature="e#0#53#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mappers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mappers/mappers.py">
+      <file leaf-file-name="series_contacts.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/series_contacts.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="274" column="49" selection-start-line="274" selection-start-column="49" selection-end-line="274" selection-end-column="49" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/generators/workbooks/common.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+            <state relative-caret-position="45">
+              <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -140,10 +154,13 @@
       <find>country</find>
       <find />
       <find>sting</find>
+      <find>rating_US</find>
+      <find>self</find>
     </findStrings>
     <replaceStrings>
       <replace>':</replace>
       <replace>{</replace>
+      <replace>rating_us</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/formatters/workbooks</dir>
@@ -155,22 +172,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/formatters/workbooks/common.py" />
-        <option value="$PROJECT_DIR$/populators/movie.py" />
-        <option value="$PROJECT_DIR$/formatters/workbooks/movie.py" />
-        <option value="$PROJECT_DIR$/formatters/workbooks/tv.py" />
-        <option value="$PROJECT_DIR$/generators/workbooks/movie.py" />
-        <option value="$PROJECT_DIR$/scrape-movielist.py" />
-        <option value="$PROJECT_DIR$/scrape-movie.py" />
-        <option value="$PROJECT_DIR$/accessors/common.py" />
-        <option value="$PROJECT_DIR$/formatters/mappers.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/tv/title.py" />
-        <option value="$PROJECT_DIR$/scrape-series.py" />
         <option value="$PROJECT_DIR$/formatters/formatters.py" />
         <option value="$PROJECT_DIR$/formatters/movie.py" />
         <option value="$PROJECT_DIR$/populators/tv.py" />
-        <option value="$PROJECT_DIR$/generators/workbooks/tv.py" />
-        <option value="$PROJECT_DIR$/formatters/tv.py" />
         <option value="$PROJECT_DIR$/populators/tv/series.py" />
         <option value="$PROJECT_DIR$/scrape.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/countries_of_origin.py" />
@@ -179,33 +184,45 @@
         <option value="$PROJECT_DIR$/generators/worksheets/common/genres.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/applications.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/ratings.py" />
-        <option value="$PROJECT_DIR$/populators/tv/episode.py" />
-        <option value="$PROJECT_DIR$/generators/worksheets/tv/episode.py" />
-        <option value="$PROJECT_DIR$/accessors/tv.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/tv/season.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/tv/series.py" />
-        <option value="$PROJECT_DIR$/populators/tv/season.py" />
         <option value="$PROJECT_DIR$/movie.txt" />
-        <option value="$PROJECT_DIR$/generators/worksheets/worksheet.py" />
         <option value="$PROJECT_DIR$/populators/movie/title.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/movie/title.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/localizations.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/timeline.py" />
         <option value="$PROJECT_DIR$/setup.py" />
         <option value="$PROJECT_DIR$/formatters/common.py" />
-        <option value="$PROJECT_DIR$/accessors/awards.py" />
-        <option value="$PROJECT_DIR$/populators/common.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/awards.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/project_contacts.py" />
         <option value="$PROJECT_DIR$/generators/worksheets/common/contacts_merged.py" />
         <option value="$PROJECT_DIR$/generators/workbooks/common.py" />
         <option value="$PROJECT_DIR$/accessors/movie.py" />
         <option value="$PROJECT_DIR$/movies-small.txt" />
-        <option value="$PROJECT_DIR$/populators/contacts.py" />
         <option value="$PROJECT_DIR$/movies.txt" />
         <option value="$PROJECT_DIR$/mappers/mappers.py" />
         <option value="$PROJECT_DIR$/movies-no-contacts.txt" />
         <option value="$PROJECT_DIR$/movies-bad.txt" />
+        <option value="$PROJECT_DIR$/populators/tv/episode.py" />
+        <option value="$PROJECT_DIR$/generators/worksheets/worksheet.py" />
+        <option value="$PROJECT_DIR$/generators/worksheets/tv/episode.py" />
+        <option value="$PROJECT_DIR$/populators/tv/season.py" />
+        <option value="$PROJECT_DIR$/accessors/tv/episode.py" />
+        <option value="$PROJECT_DIR$/accessors/tv/season.py" />
+        <option value="$PROJECT_DIR$/accessors/tv/series.py" />
+        <option value="$PROJECT_DIR$/scrape-series.py" />
+        <option value="$PROJECT_DIR$/formatters/tv.py" />
+        <option value="$PROJECT_DIR$/accessors/tv.py" />
+        <option value="$PROJECT_DIR$/populators/common.py" />
+        <option value="$PROJECT_DIR$/accessors/awards.py" />
+        <option value="$PROJECT_DIR$/generators/worksheets/tv/episode_contacts.py" />
+        <option value="$PROJECT_DIR$/generators/worksheets/tv/season_contacts.py" />
+        <option value="$PROJECT_DIR$/accessors/processors/season.py" />
+        <option value="$PROJECT_DIR$/accessors/processors/episode.py" />
+        <option value="$PROJECT_DIR$/populators/contacts.py" />
+        <option value="$PROJECT_DIR$/generators/worksheets/tv/series_contacts.py" />
+        <option value="$PROJECT_DIR$/generators/workbooks/tv.py" />
+        <option value="$PROJECT_DIR$/accessors/processors/series.py" />
       </list>
     </option>
   </component>
@@ -228,6 +245,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,6 +257,12 @@
               <item name="ft-tmdb" type="b2602c69:ProjectViewProjectNode" />
               <item name="ft-tmdb" type="462c0819:PsiDirectoryNode" />
               <item name="accessors" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ft-tmdb" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ft-tmdb" type="462c0819:PsiDirectoryNode" />
+              <item name="accessors" type="462c0819:PsiDirectoryNode" />
+              <item name="processors" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ft-tmdb" type="b2602c69:ProjectViewProjectNode" />
@@ -309,7 +333,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -327,11 +350,11 @@
       <recent name="$PROJECT_DIR$/formatters/workbooks" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/generators/worksheets/tv" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/generators/worksheets/common" />
       <recent name="$PROJECT_DIR$/populators/movie" />
       <recent name="$PROJECT_DIR$/populators/tv" />
-      <recent name="$PROJECT_DIR$/generators/worksheets/tv" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -434,7 +457,14 @@
       <option name="project" value="LOCAL" />
       <updated>1526973321555</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Dealing with contacts">
+      <created>1527045765547</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1527045765551</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -443,47 +473,47 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32965517" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26979" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32965517" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27382874" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26979" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32965517" />
       <window_info anchor="right" id="Database" order="3" />
       <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32965517" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="4" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Python Console" order="12" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,152 +534,14 @@
     <MESSAGE value="Added original format (hardcoded)" />
     <MESSAGE value="Added timeline" />
     <MESSAGE value="Added awards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added awards" />
+    <MESSAGE value="Dealing with contacts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dealing with contacts" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/common/genres.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/common/countries_of_origin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/populators/tv/series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accessors/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accessors/tv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="1" lean-forward="true" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/xlsxwriter/worksheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1357">
-          <caret line="3690" selection-start-line="3690" selection-end-line="3690" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.1/python_stubs/1052536529/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="5240" column="8" selection-start-line="5240" selection-start-column="8" selection-end-line="5240" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/formatters/tv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/tmdbsimple/tv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="349" column="8" selection-start-line="349" selection-start-column="8" selection-end-line="349" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/workbooks/tv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="42" selection-start-line="17" selection-start-column="42" selection-end-line="17" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape-movielist.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" selection-start-line="13" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/common/genres.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/common/ratings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="38" selection-start-line="7" selection-start-column="38" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scrape-series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="13" selection-start-line="13" selection-end-line="15" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/episode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="28" selection-end-line="12" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/series.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/season.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/populators/tv/episode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/populators/tv/season.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="28" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -692,9 +584,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="30" column="28" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="28" />
-          <folding>
-            <element signature="e#0#46#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -702,13 +591,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accessors/tv.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" selection-start-line="5" selection-end-line="5" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -754,65 +636,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/accessors/awards.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="62" column="26" selection-start-line="62" selection-start-column="26" selection-end-line="62" selection-end-column="26" />
-          <folding>
-            <element signature="e#71#116#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/common/project_contacts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/populators/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="94" column="20" selection-start-line="94" selection-start-column="20" selection-end-line="94" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/worksheets/worksheet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/workbooks/workbookBase.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/generators/workbooks/movie.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accessors/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="46" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/accessors/movie.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="33" column="50" selection-start-line="33" selection-start-column="50" selection-end-line="33" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -827,23 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="6" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/populators/contacts.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generators/workbooks/common.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -882,6 +692,205 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/tmdbsimple/tv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2629">
+          <caret line="334" column="6" selection-start-line="334" selection-start-column="6" selection-end-line="334" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/venv/lib/python3.6/site-packages/tmdbsimple/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="36" column="22" lean-forward="true" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="1" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populators/tv/episode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="21" column="19" selection-start-line="21" selection-start-column="19" selection-end-line="21" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populators/tv/season.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="7" column="20" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/processors/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/generators/workbooks/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/movie/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populators/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scrape-series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/formatters/tv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="16" selection-start-line="3" selection-start-column="16" selection-end-line="3" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populators/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/movie.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/awards.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/episode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="55" lean-forward="true" selection-start-line="9" selection-start-column="55" selection-end-line="9" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/workbooks/common.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="16" selection-start-line="16" selection-end-line="16" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/common/project_contacts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/episode_contacts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/tv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/workbooks/workbookBase.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/season_contacts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/worksheet.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/processors/episode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="21" column="75" selection-start-line="21" selection-start-column="75" selection-end-line="21" selection-end-column="75" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/populators/contacts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="34" selection-start-line="34" selection-end-line="34" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/processors/season.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/worksheets/tv/series_contacts.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="12" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generators/workbooks/tv.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="46" selection-start-line="46" selection-end-line="46" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/accessors/processors/series.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

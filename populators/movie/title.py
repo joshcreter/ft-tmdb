@@ -1,4 +1,4 @@
-from formatters.common import CommonFormatters
+from formatters import CommonFormatters
 import textwrap
 
 

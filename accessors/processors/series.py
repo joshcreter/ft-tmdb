@@ -1,9 +1,7 @@
-from generators.workbooks.tv import WorkbookTV
-from populators.tv.series import TvSeriesPopulator
-from populators.common import CommonPopulator
-from populators.contacts import ContactsPopulator
-from formatters.common import CommonFormatters
-from mappers.mappers import Mappers
+from generators import WorkbookTV
+from populators import CommonPopulator, ContactsPopulator, TvSeriesPopulator
+from formatters import TvFormatters, CommonFormatters
+from mappers import CommonMappers
 from functools import reduce
 import operator
 from more_itertools import unique_everseen
@@ -16,15 +14,15 @@ def process_series(self, series: tmdb.TV, workbook: WorkbookTV):
 
     formatted_series_name = CommonFormatters.format_project_title(series.info()['name'])
 
-    genres = Mappers.map_genres(series.info()['genres'])
-    origin_countries = Mappers.map_countries(series.info()['origin_country'])
+    genres = CommonMappers.map_genres(series.info()['genres'])
+    origin_countries = CommonMappers.map_countries(series.info()['origin_country'])
 
     content_ratings = series.content_ratings()
     # rating_us = list(filter(lambda d: d['iso_3166_1'] == 'US', content_ratings['results']))[0]['rating'].\
     #     replace('TV-PG', 'PG')
 
     rating_us = None
-    series_title_code = series_imdb_id
+    series_title_code = TvFormatters.format_tv_series_title_code(series_imdb_id)
 
     # awards = AwardsAccessor.get_awards(series_imdb_id)
 

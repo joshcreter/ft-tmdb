@@ -1,6 +1,6 @@
-from formatters.common import CommonFormatters
+# from formatters import CommonFormatters
 import tmdbsimple as tmdb
-from generators.workbooks.tv import WorkbookTV
+from generators import WorkbookTV
 
 
 class TvSeasonPopulator:

@@ -1,11 +1,8 @@
 from accessors.common import CommonAccessor
-from generators.workbooks.movie import WorkbookMovie
-from populators.common import CommonPopulator
-from populators.contacts import ContactsPopulator
-from formatters.common import CommonFormatters
-from formatters.movie import MovieFormatters
-from populators.movie.title import MovieTitlePopulator
-from mappers.mappers import Mappers
+from generators import WorkbookMovie
+from populators import CommonPopulator, ContactsPopulator, MovieTitlePopulator
+from formatters import CommonFormatters, MovieFormatters
+from mappers import CommonMappers
 from accessors.awards import AwardsAccessor
 from functools import reduce
 import operator
@@ -76,12 +73,12 @@ class MovieAccessor(CommonAccessor):
 
         title_code = imdb_id
 
-        genres = Mappers.map_genres(movie_info['genres'])
-        release_dates = Mappers.map_release_dates(movie.release_dates())
+        genres = CommonMappers.map_genres(movie_info['genres'])
+        release_dates = CommonMappers.map_release_dates(movie.release_dates())
 
         # origin_countries = Mappers.map_countries(
         #     company['origin_country'] for company in movie_info['production_companies'])
-        origin_countries = Mappers.map_countries(country['iso_3166_1'] for country in movie_info['production_countries'])
+        origin_countries = CommonMappers.map_countries(country['iso_3166_1'] for country in movie_info['production_countries'])
 
         localizations = movie.translations()
 

@@ -1,10 +1,10 @@
 from functools import reduce
 import operator
 from more_itertools import unique_everseen
-from formatters.common import CommonFormatters
+from formatters import CommonFormatters
 
 
-class Mappers:
+class CommonMappers:
     @staticmethod
     def map_list(source_list, mapping_dict):
         output = []
@@ -43,7 +43,7 @@ class Mappers:
         for genre in genres:
             genre_list.append(genre['name'])
 
-        return Mappers.map_list(genre_list, mapping)
+        return CommonMappers.map_list(genre_list, mapping)
 
     @staticmethod
     def map_countries(countries):
@@ -231,7 +231,7 @@ class Mappers:
             'ZW': 'Zimbabwe',
             'SU': 'Russia',
         }
-        return Mappers.map_list(countries, mapping)
+        return CommonMappers.map_list(countries, mapping)
 
     @staticmethod
     def map_release_dates(release_dates):
@@ -260,7 +260,7 @@ class Mappers:
                 data = {
                     "type": type_mapping.get(release_date['type']),
                     # This is a convoluted way to map a single country
-                    "territory": Mappers.map_countries([territory['iso_3166_1']])[0],
+                    "territory": CommonMappers.map_countries([territory['iso_3166_1']])[0],
                     "media": media_mapping.get(release_date['type']),
                     "start_date": CommonFormatters.format_date(release_date['release_date']),
                     "note": release_date.get('note', '')

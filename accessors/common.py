@@ -1,6 +1,5 @@
 import tmdbsimple as tmdb
-from populators.common import CommonPopulator
-from populators.contacts import ContactsPopulator
+# from populators import CommonPopulator, ContactsPopulator
 
 
 class CommonAccessor:

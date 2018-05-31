@@ -1,7 +1,6 @@
-from generators.workbooks.tv import WorkbookTV
-from populators.tv.season import TvSeasonPopulator
-from formatters.tv import TvFormatters
-from populators.contacts import ContactsPopulator
+from generators import WorkbookTV
+from populators import ContactsPopulator, TvSeasonPopulator
+from formatters import TvFormatters
 from functools import reduce
 import operator
 from more_itertools import unique_everseen

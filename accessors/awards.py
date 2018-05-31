@@ -2,8 +2,9 @@
 # https://rdflib.github.io/sparqlwrapper/
 
 from SPARQLWrapper import SPARQLWrapper, JSON
-from formatters.common import CommonFormatters
-from mappers.mappers import Mappers
+from formatters import CommonFormatters
+from mappers import CommonMappers
+
 
 class AwardsAccessor:
     @staticmethod
@@ -51,7 +52,7 @@ class AwardsAccessor:
 
         for result in results["results"]["bindings"]:
             year = CommonFormatters.format_date_year_only(result['time']['value'])
-            award_title_data = Mappers.map_award(result['award_receivedLabel']['value'])
+            award_title_data = CommonMappers.map_award(result['award_receivedLabel']['value'])
 
             # print(year + " | " + result['award_receivedLabel']['value'])
 

@@ -11,7 +11,7 @@ def main():
 
     series = args.series
 
-    series_accessor = tv.SeriesAccessor()
+    series_accessor = tv.TvAccessor()
 
     series_accessor.search_and_process_series(series)
 

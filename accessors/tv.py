@@ -1,10 +1,11 @@
 from generators.workbooks.tv import WorkbookTV
 from accessors.common import CommonAccessor
-from populators.contacts import ContactsPopulator
+from populators import ContactsPopulator
 import tmdbsimple as tmdb
 import accessors.processors.series
 
-class SeriesAccessor(CommonAccessor):
+
+class TvAccessor(CommonAccessor):
     def __init__(self):
         super().__init__()
 

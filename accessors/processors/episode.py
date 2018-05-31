@@ -1,8 +1,7 @@
-from generators.workbooks.tv import WorkbookTV
-from populators.tv.episode import TvEpisodePopulator
-from formatters.tv import TvFormatters
-from populators.common import CommonPopulator
-from populators.contacts import ContactsPopulator
+from generators import WorkbookTV
+from formatters import TvFormatters
+from populators import CommonPopulator, ContactsPopulator, TvEpisodePopulator
+
 import tmdbsimple as tmdb
 
 

@@ -5,7 +5,7 @@ from functools import reduce
 import operator
 from more_itertools import unique_everseen
 import tmdbsimple as tmdb
-import accessors.processors.episode
+import accessors.tv.episode
 
 
 def process_season(self, formatted_series_name: str, series_title_code: str, genres,
@@ -25,17 +25,17 @@ def process_season(self, formatted_series_name: str, series_title_code: str, gen
 
     # for episode_number in range(1, 2):
     for episode_number in range(1, episode_count + 1):
-        episode_contacts = accessors.processors.episode.process_episode(self=self,
-                                                                        episode_number=episode_number,
-                                                                        formatted_series_name=formatted_series_name,
-                                                                        season_title_code=season_title_code,
-                                                                        genres=genres,
-                                                                        origin_countries=origin_countries,
-                                                                        rating_us=rating_us,
-                                                                        season_number=season_number,
-                                                                        series_id=series_id,
-                                                                        series_imdb_id=series_imdb_id,
-                                                                        workbook=workbook)
+        episode_contacts = accessors.tv.episode.process_episode(self=self,
+                                                                      episode_number=episode_number,
+                                                                      formatted_series_name=formatted_series_name,
+                                                                      season_title_code=season_title_code,
+                                                                      genres=genres,
+                                                                      origin_countries=origin_countries,
+                                                                      rating_us=rating_us,
+                                                                      season_number=season_number,
+                                                                      series_id=series_id,
+                                                                      series_imdb_id=series_imdb_id,
+                                                                      workbook=workbook)
         season_contacts_merged.append(episode_contacts)
 
     season_contacts = ContactsPopulator.populate_project_contacts_sheet(worksheet=workbook.get_tv_season_contacts_sheet(),

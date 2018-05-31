@@ -1,11 +1,11 @@
 from generators.workbooks.tv import WorkbookTV
 from accessors.common import CommonAccessor
 from populators import ContactsPopulator
-import tmdbsimple as tmdb
-import accessors.processors.series
+# import tmdbsimple as tmdb
+import accessors.tv.series
 
 
-class TvAccessor(CommonAccessor):
+class TvSeriesAccessor(CommonAccessor):
     def __init__(self):
         super().__init__()
 
@@ -18,7 +18,7 @@ class TvAccessor(CommonAccessor):
             
             workbook = WorkbookTV(series_info['name'])
 
-            series_contacts = accessors.processors.series.process_series(self, series, workbook)
+            series_contacts = accessors.tv.series.process_series(self, series, workbook)
 
             ContactsPopulator.populate_contacts_merged_sheet(workbook, series_contacts)
 

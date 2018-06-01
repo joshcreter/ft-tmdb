@@ -1,7 +1,7 @@
 from generators.worksheets.worksheet import Worksheet
 
 
-class LocalizationSheet(Worksheet):
+class LocalizationsSheet(Worksheet):
     name = 'Localizations'
     columns = {
         'title_code': {'label': 'TitleCode', 'width': 15.0},

@@ -26,7 +26,7 @@ class MovieTitlePopulator:
             'runtime': movie.info()['runtime'],
             'homepage': movie.info()['homepage'],
             'original_language': CommonFormatters.format_language(movie.info()['original_language']),
-            'status': CommonFormatters.format_project_status(movie.info()['status']),
+            'status': CommonFormatters.format_movie_project_status(movie.info()['status']),
             'synopsis': textwrap.shorten(movie.info()['overview'], width=999, placeholder="..."),
             'original_format': '35mm'
         }

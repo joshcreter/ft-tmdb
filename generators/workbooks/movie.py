@@ -1,4 +1,4 @@
-from generators.worksheets.movie.title import MovieTitleSheet
+from generators.worksheets import MovieTitleSheet
 from generators.workbooks.common import WorkbookCommon
 
 

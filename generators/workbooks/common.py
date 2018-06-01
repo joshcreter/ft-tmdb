@@ -1,14 +1,5 @@
-from generators.workbooks.workbookBase import WorkbookBase
-from generators.worksheets.common.genres import GenresSheet
-from generators.worksheets.common.ratings import RatingsSheet
-from generators.worksheets.common.project_contacts import ProjectContactsSheet
-from generators.worksheets.common.countries_of_origin import CountriesOfOriginSheet
-from generators.worksheets.common.applications import ApplicationsSheet
-from generators.worksheets.common.project_groups import ProjectGroupsSheet
-from generators.worksheets.common.localizations import LocalizationSheet
-from generators.worksheets.common.timeline import TimelineSheet
-from generators.worksheets.common.awards import AwardsSheet
-from generators.worksheets.common.contacts_merged import ContactsMergedSheet
+from generators.workbooks import WorkbookBase
+from generators.worksheets import *
 
 
 class WorkbookCommon(WorkbookBase):
@@ -22,6 +13,8 @@ class WorkbookCommon(WorkbookBase):
     timelineSheet = ''
     awardsSheet = ''
     contactsMergedSheet = ''
+    languagesSheet = ''
+    subtitlesSheet = ''
 
     def __init__(self, property_name):
         super().__init__(property_name)
@@ -34,37 +27,46 @@ class WorkbookCommon(WorkbookBase):
         self.countriesOfOriginSheet = CountriesOfOriginSheet(self.workbook)
         self.applicationSheet = ApplicationsSheet(self.workbook)
         self.projectGroupsSheet = ProjectGroupsSheet(self.workbook)
-        self.localizationsSheet = LocalizationSheet(self.workbook)
+        self.localizationsSheet = LocalizationsSheet(self.workbook)
         self.timelineSheet = TimelineSheet(self.workbook)
         self.awardsSheet = AwardsSheet(self.workbook)
         self.contactsMergedSheet = ContactsMergedSheet(self.workbook)
+        self.languagesSheet = LanguagesSheet(self.workbook)
+        self.subtitlesSheet = SubtitlesSheet(self.workbook)
 
-    def get_genre_sheet(self):
+    def get_genre_sheet(self) -> GenresSheet:
         return self.genreSheet
 
-    def get_ratings_sheet(self):
+    def get_ratings_sheet(self) -> RatingsSheet:
         return self.ratingsSheet
 
-    def get_project_contacts_sheet(self):
+    def get_project_contacts_sheet(self) -> ProjectContactsSheet:
         return self.projectContactsSheet
 
-    def get_countries_of_origin_sheet(self):
+    def get_countries_of_origin_sheet(self) -> CountriesOfOriginSheet:
         return self.countriesOfOriginSheet
 
-    def get_application_sheet(self):
+    def get_application_sheet(self) -> ApplicationsSheet:
         return self.applicationSheet
 
-    def get_project_groups_sheet(self):
+    def get_project_groups_sheet(self) -> ProjectGroupsSheet:
         return self.projectGroupsSheet
 
-    def get_localizations_sheet(self):
+    def get_localizations_sheet(self) -> LocalizationsSheet:
         return self.localizationsSheet
 
-    def get_timeline_sheet(self):
+    def get_timeline_sheet(self) -> TimelineSheet:
         return self.timelineSheet
 
-    def get_awards_sheet(self):
+    def get_awards_sheet(self) -> AwardsSheet:
         return self.awardsSheet
 
-    def get_contacts_merged_sheet(self):
+    def get_contacts_merged_sheet(self) -> ContactsMergedSheet:
         return self.contactsMergedSheet
+
+    def get_languages_sheet(self) -> LanguagesSheet:
+        return self.languagesSheet
+
+    def get_subtitles_sheet(self) -> SubtitlesSheet:
+        return self.subtitlesSheet
+

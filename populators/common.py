@@ -1,6 +1,9 @@
+from generators import *
+
+
 class CommonPopulator:
     @staticmethod
-    def populate_applications_sheet(workbook, title_code):
+    def populate_applications_sheet(workbook, title_code: str):
         worksheet = workbook.get_application_sheet().get_worksheet()
 
         applications = ['Avails', 'BizAffairs', 'InvenTrack']
@@ -12,7 +15,7 @@ class CommonPopulator:
             worksheet.write_data_row(dataset)
 
     @staticmethod
-    def populate_project_groups_sheet(workbook, title_code):
+    def populate_project_groups_sheet(workbook, title_code: str):
         worksheet = workbook.get_project_groups_sheet().get_worksheet()
 
         project_groups = ['Demo Titles']
@@ -23,9 +26,18 @@ class CommonPopulator:
             }
             worksheet.write_data_row(dataset)
 
+    @staticmethod
+    def populate_ratings_sheet(worksheet: RatingsSheet, title_code: str, certifications: {}):
+        for certification in certifications:
+            dataset = {
+                'title_code': title_code,
+                'authority': certification['authority'],
+                'rating': certification['rating']
+            }
+            worksheet.write_data_row(dataset)
 
     @staticmethod
-    def populate_ratings_sheet(workbook, title_code, rating_US):
+    def populate_ratings_sheet_US_only(workbook, title_code: str, rating_US: str):
         worksheet_ratings = workbook.get_ratings_sheet().get_worksheet()
         ratings_dataset = {
             'title_code': title_code,
@@ -35,7 +47,7 @@ class CommonPopulator:
         worksheet_ratings.write_data_row(ratings_dataset)
 
     @staticmethod
-    def populate_genres_sheet(workbook, title_code, genres):
+    def populate_genres_sheet(workbook, title_code: str, genres: [str]):
         worksheet_genre = workbook.get_genre_sheet().get_worksheet()
         for genre in genres:
             genre_dataset = {
@@ -45,7 +57,7 @@ class CommonPopulator:
             worksheet_genre.write_data_row(genre_dataset)
 
     @staticmethod
-    def populate_countries_of_origin_sheet(workbook, title_code, countries):
+    def populate_countries_of_origin_sheet(workbook, title_code: str, countries: [str]):
         worksheet = workbook.get_countries_of_origin_sheet().get_worksheet()
         for country in countries:
             dataset = {
@@ -55,7 +67,7 @@ class CommonPopulator:
             worksheet.write_data_row(dataset)
 
     @staticmethod
-    def populate_localizations_sheet(workbook, title_code, localizations, formatted_title):
+    def populate_localizations_sheet(workbook, title_code, localizations, formatted_title: str):
         worksheet = workbook.get_localizations_sheet().get_worksheet()
 
         allowed_localization_codes = ['af', 'ar', 'az', 'be', 'bg', 'ca', 'cs', 'da', 'de', 'div', 'el', 'es', 'et',
@@ -84,7 +96,7 @@ class CommonPopulator:
 
 
     @staticmethod
-    def populate_timeline_sheet(workbook, title_code, release_dates):
+    def populate_timeline_sheet(workbook, title_code: str, release_dates: {}):
         worksheet = workbook.get_timeline_sheet().get_worksheet()
 
         for release_date in release_dates:
@@ -99,7 +111,7 @@ class CommonPopulator:
             worksheet.write_data_row(dataset)
 
     @staticmethod
-    def populate_awards_sheet(workbook, title_code, awards):
+    def populate_awards_sheet(workbook, title_code: str, awards: {}):
         worksheet = workbook.get_awards_sheet().get_worksheet()
 
         for award in awards:
@@ -110,5 +122,23 @@ class CommonPopulator:
                 'organization': award['organization'],
                 'trophy': award['trophy'],
                 'category': award['category'],
+            }
+            worksheet.write_data_row(dataset)
+
+    @staticmethod
+    def populate_languages_sheet(worksheet: LanguagesSheet, title_code: str, languages: [str]):
+        for language in languages:
+            dataset = {
+                'title_code': title_code,
+                'language': language,
+            }
+            worksheet.write_data_row(dataset)
+
+    @staticmethod
+    def populate_subtitles_sheet(worksheet: SubtitlesSheet, title_code: str, languages: [str]):
+        for language in languages:
+            dataset = {
+                'title_code': title_code,
+                'language': language,
             }
             worksheet.write_data_row(dataset)

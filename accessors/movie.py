@@ -2,7 +2,7 @@ from accessors.common import CommonAccessor
 from generators import WorkbookMovie
 from populators import CommonPopulator, ContactsPopulator, MovieTitlePopulator
 from formatters import CommonFormatters, MovieFormatters
-from mappers import CommonMappers
+from mappers import CommonMappers, CountryMapper
 from accessors.awards import AwardsAccessor
 from functools import reduce
 import operator
@@ -78,7 +78,7 @@ class MovieAccessor(CommonAccessor):
 
         # origin_countries = Mappers.map_countries(
         #     company['origin_country'] for company in movie_info['production_companies'])
-        origin_countries = CommonMappers.map_countries(country['iso_3166_1'] for country in movie_info['production_countries'])
+        origin_countries = CountryMapper.map_countries(country['iso_3166_1'] for country in movie_info['production_countries'])
 
         localizations = movie.translations()
 
@@ -96,7 +96,7 @@ class MovieAccessor(CommonAccessor):
         CommonPopulator.populate_countries_of_origin_sheet(workbook, title_code, origin_countries)
         CommonPopulator.populate_applications_sheet(workbook, title_code)
         CommonPopulator.populate_project_groups_sheet(workbook, title_code)
-        CommonPopulator.populate_ratings_sheet(workbook, title_code, rating_US)
+        CommonPopulator.populate_ratings_sheet_US_only(workbook, title_code, rating_US)
         CommonPopulator.populate_localizations_sheet(workbook, title_code, localizations, property_title)
         CommonPopulator.populate_timeline_sheet(workbook, title_code, release_dates)
         CommonPopulator.populate_awards_sheet(workbook, title_code, awards)

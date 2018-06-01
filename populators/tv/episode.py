@@ -1,10 +1,11 @@
 from formatters import CommonFormatters, TvFormatters
+from generators import WorkbookTV
 import textwrap
 
 
 class TvEpisodePopulator:
     @staticmethod
-    def populate_episode_sheet(workbook, title_code, season_title_code, season_number, episode_number, episode,
+    def populate_episode_sheet(workbook: WorkbookTV, title_code, season_title_code, season_number, episode_number, episode,
                                series_title_formatted):
         worksheet = workbook.get_tv_episode_sheet().get_worksheet()
 

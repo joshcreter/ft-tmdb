@@ -1,3 +1,6 @@
+import tmdbsimple as tmdb
+
+
 class TvFormatters:
     @staticmethod
     def format_tv_season_title(formatted_series_name: str, season_number: int):
@@ -58,4 +61,28 @@ class TvFormatters:
     @staticmethod
     def format_tv_episode_title_code(series_imdb_id, season_number, episode_number):
         return "{0}-{1:02d}x{2:02d}".format(TvFormatters.format_tv_series_title_code(series_imdb_id), season_number, episode_number)
+
+    @staticmethod
+    def get_series_title_aka_1_and_2(series: tmdb.TV) -> [str, str]:
+        alternative_titles = series.alternative_titles()['results']
+
+        if len(alternative_titles) >= 2:
+            us_titles = list(filter(lambda d: d['iso_3166_1'] == 'US', alternative_titles))
+
+            if len(us_titles) >= 2:
+                return[us_titles[0]['title'], us_titles[1]['title']]
+
+            elif len(us_titles) == 1:
+                first_not_us_title = list(filter(lambda d: d['iso_3166_1'] != 'US', alternative_titles))[0]['title']
+                return[us_titles[0]['title'], first_not_us_title]
+
+            else:
+                return [(alternative_titles[0]['title']), alternative_titles[1]['title']]
+
+        elif len(alternative_titles) == 1:
+            return [(alternative_titles[0]['title']), '']
+
+        else:
+            return ['', '']
+
 

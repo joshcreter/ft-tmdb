@@ -21,7 +21,8 @@ class TvSeriesPopulator:
                               original_format: str,
                               series_overview=str,
                               series_title_aka1=str,
-                              series_title_aka2=str
+                              series_title_aka2=str,
+                              season_count=int,
                               ):
 
         worksheet = workbook.get_tv_series_sheet().get_worksheet()
@@ -45,6 +46,7 @@ class TvSeriesPopulator:
             'original_format': original_format,
             'series_overview': series_overview,
             'series_title_aka1': series_title_aka1,
-            'series_title_aka2': series_title_aka2
+            'series_title_aka2': series_title_aka2,
+            'season_count': season_count
         }
         worksheet.write_data_row(dataset)

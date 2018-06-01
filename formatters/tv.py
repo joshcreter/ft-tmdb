@@ -85,4 +85,18 @@ class TvFormatters:
         else:
             return ['', '']
 
+    @staticmethod
+    def get_series_copyright_holder(series: tmdb.TV) -> str:
+        try:
+            return series.info()['production_companies'][0]['name']
+        except IndexError:
+            return ''
+
+    @staticmethod
+    def get_episode_run_time(series: tmdb.TV) -> int:
+        try:
+            return series.info()['episode_run_time'][0]
+        except IndexError:
+            # This is a total guess
+            return 25
 

@@ -23,6 +23,7 @@ class TvSeriesSheet(Worksheet):
         'series_overview': {'label': 'Synopsis', 'width': 30.0},
         'series_title_aka1': {'label': 'AKA_1', 'width': 30.0},
         'series_title_aka2': {'label': 'AKA_2', 'width': 30.0},
+        'season_count': {'label': 'NumberOfSeasons', 'width': 15.0},
 
     }
 

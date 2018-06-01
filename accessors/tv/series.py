@@ -19,13 +19,14 @@ def process_series(self, series: tmdb.TV, workbook: WorkbookTV):
     genres = CommonMappers.map_genres(series.info()['genres'])
     origin_countries = CountryMapper.map_countries(series.info()['origin_country'])
     production_status = CommonMappers.map_production_status(series.info()['status'])
-    episode_run_time = series.info()['episode_run_time'][0]
+    episode_run_time = TvFormatters.get_episode_run_time(series)
     original_language = CommonFormatters.format_language(series.info()['original_language'])
     languages = CommonFormatters.format_languages(series.info()['languages'])
     certifications = CommonMappers.map_tv_content_ratings(series.content_ratings()['results'])
     homepage = series.info()['homepage']
     series_overview = series.info()['overview']
     series_title_aka1, series_title_aka2 = TvFormatters.get_series_title_aka_1_and_2(series)
+    season_count = series.info()['number_of_seasons']
 
     # Below here is faked data
     episode_run_time_adjusted = 30 if episode_run_time <= 30 else 60
@@ -35,7 +36,7 @@ def process_series(self, series: tmdb.TV, workbook: WorkbookTV):
     budget = episode_run_time * 70000 * average_episodes_per_season
     budget_currency = "USD"
     original_format = 'HD' if int(year_completed) > 2010 else 'SD'
-    copyright_holder = series.info()['production_companies'][0]['name']
+    copyright_holder = TvFormatters.get_series_copyright_holder(series)
     copyright_year = year_completed if int(year_completed) > 1990 else 2018
 
 
@@ -59,8 +60,8 @@ def process_series(self, series: tmdb.TV, workbook: WorkbookTV):
                                             copyright_year=copyright_year,
                                             series_overview=series_overview,
                                             series_title_aka1=series_title_aka1,
-                                            series_title_aka2=series_title_aka2
-
+                                            series_title_aka2=series_title_aka2,
+                                            season_count=season_count
                                             )
 
     CommonPopulator.populate_localizations_sheet(workbook=workbook,

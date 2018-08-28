@@ -91,7 +91,8 @@ class MovieAccessor(CommonAccessor):
 
         MovieTitlePopulator.populate_movie_title_sheet(workbook, title_code, movie, imdb_id)
 
-        contacts = ContactsPopulator.populate_project_contacts_sheet(workbook, title_code, movie.credits())
+        contacts = ContactsPopulator.populate_contacts_merged_sheet(workbook, movie.credits())
+        # contacts = ContactsPopulator.populate_project_contacts_sheet(workbook.get_contacts_merged_sheet(), title_code, movie.credits())
         CommonPopulator.populate_genres_sheet(workbook, title_code, genres)
         CommonPopulator.populate_countries_of_origin_sheet(workbook, title_code, origin_countries)
         CommonPopulator.populate_applications_sheet(workbook, title_code)

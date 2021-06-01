@@ -17,5 +17,5 @@ requests==2.18.4          # via tmdbsimple
 six==1.11.0               # via isodate, more-itertools
 sparqlwrapper==1.8.2
 tmdbsimple==2.2.0
-urllib3==1.22             # via requests
+urllib3==1.26.5             # via requests
 xlsxwriter==1.0.4

@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file requirements.txt setup.py
 #
-certifi==2018.4.16        # via requests
+certifi==2022.12.7        # via requests
 chardet==3.0.4            # via requests
 dotmap==1.2.20
 idna==2.6                 # via requests
